@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let now = new Date();
 let today = document.querySelector("today");
 
@@ -14,7 +13,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
+  "Saturday"
 ];
 let day = days[now.getDay()];
 let months = [
@@ -29,7 +28,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December",
+  "December"
 ];
 let month = months[now.getMonth()];
 today.innerHTML = `${day}, ${month} ${date}, ${year} @ ${hours}:${minutes} ET`;
@@ -55,9 +54,12 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let message = `${temperature}°`;
   let temp = document.querySelector("#nowTemp");
-  let iconElement= (#current-emoji);
+  let iconElement = document.querySelector("#icon");
   temp.innerHTML = message;
-  iconElement.setAttribute("src," `http://openweathermap.org/img/wn/10d@2x.png`)
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/10d@2x.png`
+  );
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -66,7 +68,7 @@ let hereButton = document.querySelector("#current-location-button");
 hereButton.addEventListener("click", getCurrentPosition);
 
 function showPositionWeather(response) {
-  response.preventDefault();
+  event.preventDefault();
   temp.innerHTML = yourWeather;
 
   let apiKey = "ac0f90b8c79b796b6603c9c33aef3d54";
@@ -75,7 +77,6 @@ function showPositionWeather(response) {
   let long = position.coords.longitude;
   let yourWeather = `${temperature}°`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
 
   axios.get(apiUrl).then(showPositionWeather);
 }
