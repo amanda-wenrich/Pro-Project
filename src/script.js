@@ -61,22 +61,23 @@ function showWeather(response) {
   let descriptionMessage = `Condition: ${getDescription}`;
   let description = document.querySelector("#description");
   let getWind = Math.round(response.data.wind.speed);
-  let windMessage = `Wind Speed: ${getWind} m/h`;
+  let windMessage = `Wind Speed: ${getWind} MPH`;
   let wind = document.querySelector("#wind");
   let getFeels = Math.round(response.data.main.feels_like);
   let feelsMessage = `Feels Like: ${getFeels}°`;
   let feels = document.querySelector("#feels");
-
-  let getCity = response.data.name;
-  let cityMessage = `${getCity}`;
-  let city = document.querySelector("#city");
-
+  let getCityName = response.data.name;
+  let cityNameMessage = `${getCityName}`;
+  let cityName = document.querySelector("#cityName");
   let iconElement = document.querySelector("#icon");
-  temp.innerHTML = tempMessage;
+
+let fahrTemp= response.data.main.temp;
+
+  temp.innerHTML = imperialTemp;
   humidity.innerHTML = humidityMessage;
   description.innerHTML = descriptionMessage;
   wind.innerHTML = windMessage;
-  city.innerHTML = cityMessage;
+  cityName.innerHTML = cityNameMessage;
   feels.innerHTML = feelsMessage;
 
   iconElement.setAttribute(
@@ -85,22 +86,24 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-let hereButton = document.querySelector("#current-location-button");
-hereButton.addEventListener("click", getCurrentPosition);
 
-function showPositionWeather(response) {
+function displayCelciusTemp(event) {
   event.preventDefault();
-  temp.innerHTML = yourWeather;
-
-  let apiKey = "ac0f90b8c79b796b6603c9c33aef3d54";
-  let units = "imperial";
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  let yourWeather = `${temperature}°`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showPositionWeather);
+  let celciusTemp = (fahrTemp - 32) * 5 / 9;
+  let temp = document.querySelector("#nowTemp");
+  temp.innerHTML = Math.round(celciusTemp;
 }
+
+function displayFahrTemp(event) {
+event.preventDefault();
+let temp = document.querySelector("#nowTemp");
+temp.innerHTML= Math.round(fahrTemp); 
+}
+
+fahrTemp = null;
+
+let metricButton = document.querySelector("#metric-button");
+metricButton.addEventListener("click", displayCelsiousTemp);
+
+let imperialButton = document.querySelector("imperial-button");
+imperialButton.addEventListener("click", displayFahrTemp);

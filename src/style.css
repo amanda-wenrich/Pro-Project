@@ -1,9 +1,16 @@
 .card-body {
+  max-width: 600px;
+  margin: 30px auto;
   background: radial-gradient(
     circle,
     rgba(94, 188, 245, 1) 0%,
     rgba(22, 182, 81, 1) 100%
   );
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid #134472;
+  border-radius: 10px;
 }
 h1 {
   text-align: center;
@@ -34,8 +41,6 @@ li {
   text-transform: capitalize;
 }
 #icon {
-  position: relative;
-  left: 200px;
 }
 #details {
   list-style: none;
@@ -90,14 +95,7 @@ li {
   padding-left: 10px;
   cursor: pointer;
 }
-#imperial-button {
-  position: relative;
-  left: 10px;
-}
-#metric-button {
-  position: relative;
-  right: 5px;
-}
+
 #imperial-button,
 #metric-button {
   background-color: transparent;
