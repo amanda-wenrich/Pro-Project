@@ -13,7 +13,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday",
+  "Saturday"
 ];
 let day = days[now.getDay()];
 let months = [
@@ -28,7 +28,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December",
+  "December"
 ];
 let month = months[now.getMonth()];
 today.innerHTML = `${day}, ${month} ${date}, ${year} @ ${hours}:${minutes} ET`;
@@ -81,8 +81,9 @@ function showWeather(response) {
 
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/10d@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
