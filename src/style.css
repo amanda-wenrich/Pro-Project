@@ -30,6 +30,9 @@ temp {
   text-align: center;
   font-family: "Quicksand", sans-serif;
 }
+li {
+  text-transform: capitalize;
+}
 #icon {
   position: relative;
   left: 200px;

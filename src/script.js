@@ -13,7 +13,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let months = [
@@ -28,7 +28,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 let month = months[now.getMonth()];
 today.innerHTML = `${day}, ${month} ${date}, ${year} @ ${hours}:${minutes} ET`;
@@ -44,18 +44,41 @@ function displayCity(event) {
   let city = document.querySelector("#search-city").value.trim();
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showWeather);
 }
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", displayCity);
 
-function showTemperature(response) {
+function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-  let message = `${temperature}°`;
+  let tempMessage = `${temperature}°`;
   let temp = document.querySelector("#nowTemp");
+  let getHumidity = Math.round(response.data.main.humidity);
+  let humidityMessage = `Humidity: ${getHumidity}%`;
+  let humidity = document.querySelector("#humidity");
+  let getDescription = response.data.weather[0].description;
+  let descriptionMessage = `Condition: ${getDescription}`;
+  let description = document.querySelector("#description");
+  let getWind = Math.round(response.data.wind.speed);
+  let windMessage = `Wind Speed: ${getWind} m/h`;
+  let wind = document.querySelector("#wind");
+  let getFeels = Math.round(response.data.main.feels_like);
+  let feelsMessage = `Feels Like: ${getFeels}°`;
+  let feels = document.querySelector("#feels");
+
+  let getCity = response.data.name;
+  let cityMessage = `${getCity}`;
+  let city = document.querySelector("#city");
+
   let iconElement = document.querySelector("#icon");
-  temp.innerHTML = message;
+  temp.innerHTML = tempMessage;
+  humidity.innerHTML = humidityMessage;
+  description.innerHTML = descriptionMessage;
+  wind.innerHTML = windMessage;
+  city.innerHTML = cityMessage;
+  feels.innerHTML = feelsMessage;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/10d@2x.png`
