@@ -13,7 +13,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let months = [
@@ -28,7 +28,7 @@ let months = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 let month = months[now.getMonth()];
 today.innerHTML = `${day}, ${month} ${date}, ${year} @ ${hours}:${minutes} ET`;
@@ -71,9 +71,7 @@ function showWeather(response) {
   let cityName = document.querySelector("#cityName");
   let iconElement = document.querySelector("#icon");
 
-let fahrTemp= response.data.main.temp;
-
-  temp.innerHTML = imperialTemp;
+  temp.innerHTML = tempMessage;
   humidity.innerHTML = humidityMessage;
   description.innerHTML = descriptionMessage;
   wind.innerHTML = windMessage;
@@ -86,24 +84,3 @@ let fahrTemp= response.data.main.temp;
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-function displayCelciusTemp(event) {
-  event.preventDefault();
-  let celciusTemp = (fahrTemp - 32) * 5 / 9;
-  let temp = document.querySelector("#nowTemp");
-  temp.innerHTML = Math.round(celciusTemp;
-}
-
-function displayFahrTemp(event) {
-event.preventDefault();
-let temp = document.querySelector("#nowTemp");
-temp.innerHTML= Math.round(fahrTemp); 
-}
-
-fahrTemp = null;
-
-let metricButton = document.querySelector("#metric-button");
-metricButton.addEventListener("click", displayCelsiousTemp);
-
-let imperialButton = document.querySelector("imperial-button");
-imperialButton.addEventListener("click", displayFahrTemp);

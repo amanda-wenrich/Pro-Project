@@ -29,25 +29,18 @@ today {
   font-family: "Poppins", sans-serif;
 }
 temp {
-  display: block;
-  text-align: center;
-  font-size: 54px;
-  color: #eeeeee;
-  font-weight: 900;
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-}
-li {
-  text-transform: capitalize;
+  display: inline;
+  position: relative;
+  left: 180px;
+  font-size: 50px;
 }
 #icon {
+  position: relative;
+  right: 90px;
 }
 #details {
+  text-transform: capitalize;
   list-style: none;
-  position: relative;
-  left: 300px;
-  bottom: 85px;
-  margin: 0;
   color: #3a4750;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
