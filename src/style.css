@@ -45,17 +45,20 @@ temp {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-#forecast {
-  display: block;
+#forecast-date {
   text-align: center;
   font-size: 18px;
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
+  color: white;
 }
-.col-2 {
-  color: #eeeeee;
-}
-.col {
+
+#high-temps,
+#low-temps {
+  text-align: center;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
   color: #303841;
 }
 #search-city {
