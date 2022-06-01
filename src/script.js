@@ -49,6 +49,8 @@ function displayCity(event) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
   forecastHTML =
     forecastHTML +
     `
@@ -61,11 +63,12 @@ function displayForecast() {
     <div class="forecast-temps">
       <span class="high-temps"> 60° </span> /
       <span class="low-temps"> 49° </span> 
+      </div>
     </div>
 </div>`;
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}
+});
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", displayCity);
