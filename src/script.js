@@ -50,7 +50,7 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -71,6 +71,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ac0f90b8c79b796b6603c9c33aef3d54";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordintes.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
 }
 
 let searchForm = document.querySelector("#city-search-form");
@@ -112,3 +119,4 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+getForecast(response.data.coord);
