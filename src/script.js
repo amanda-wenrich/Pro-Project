@@ -48,11 +48,13 @@ function displayCity(event) {
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
-  forecastHTML = forecastHTML +
-`
+    forecastHTML =
+      forecastHTML +
+      `
 <div class="col-2">
   <div class="forecast-date">${day}</div>
   <img 
@@ -66,10 +68,10 @@ function displayForecast() {
   </div>
 </div>
 `;
-});
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
+}
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", displayCity);
