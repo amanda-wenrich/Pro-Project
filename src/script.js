@@ -49,26 +49,27 @@ function displayCity(event) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thu", "Fri"];
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
-  forecastHTML =
-    forecastHTML +
-    `
-<div class="container" id="forecast">
-    <div class="col-2">
-      <div class="forecast-date">
-      Today
-      </div>
-    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="36"/>
-    <div class="forecast-temps">
-      <span class="high-temps"> 60° </span> /
-      <span class="low-temps"> 49° </span> 
-      </div>
-    </div>
-</div>`;
+  forecastHTML = forecastHTML +
+`
+<div class="col-2">
+  <div class="forecast-date">${day}</div>
+  <img 
+    src="http://openweathermap.org/img/wn/10d@2x.png" 
+    alt="" 
+    width="36"
+  />
+  <div class="forecast-temps">
+    <span class="high-temps"> 60° </span>
+    <span class="low-temps"> 49° </span> 
+  </div>
+</div>
+`;
+});
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-});
+
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", displayCity);
