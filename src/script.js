@@ -46,9 +46,31 @@ function displayCity(event) {
 
   axios.get(apiUrl).then(showWeather);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+<div class="container" id="forecast">
+    <div class="col-2">
+      <div class="forecast-date">
+      Today
+      </div>
+    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="36"/>
+    <div class="forecast-temps">
+      <span class="high-temps"> 60° </span> /
+      <span class="low-temps"> 49° </span> 
+    </div>
+</div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", displayCity);
+
+displayForecast();
 
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
