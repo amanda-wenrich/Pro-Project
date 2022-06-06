@@ -1,4 +1,4 @@
-zzlet now = new Date();
+let now = new Date();
 let today = document.querySelector("today");
 
 let date = now.getDate();
