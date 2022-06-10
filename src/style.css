@@ -27,9 +27,20 @@ h1 {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
+#current-conditions {
+  text-align: center;
+}
+
 #nowTemp {
   font-size: 36px;
+  display: block;
+  text-align: center;
 }
+#nowIcon {
+  text-align: center;
+  display: block;
+}
+
 #conditions {
   display: block;
   text-align: center;
