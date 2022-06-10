@@ -21,19 +21,16 @@ h1 {
   padding-top: 25px;
 }
 #current-date-time {
-  display: block;
   text-align: center;
   color: #3a4750;
   font-size: 14px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
-#nowTemp {
+.nowTemp {
   font-size: 36px;
 }
-#current_row {
-  text-align: center;
-  margin: auto;
+#icon
 }
 #details {
   text-transform: capitalize;
