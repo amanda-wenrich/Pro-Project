@@ -20,7 +20,7 @@ h1 {
   color: #303841;
   padding-top: 25px;
 }
-today {
+#current-date-time {
   text-align: center;
   color: #3a4750;
   font-size: 14px;
