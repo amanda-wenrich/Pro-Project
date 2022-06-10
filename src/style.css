@@ -30,6 +30,11 @@ h1 {
 .nowTemp {
   font-size: 36px;
 }
+#conditions {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
 #details {
   text-transform: capitalize;
   list-style: none;
