@@ -38,12 +38,24 @@
             <button type="submit" id="current-location-button"> <i class="fa-solid fa-location-dot"></i> </i></button>
           </form">
           <br />
-          <div class="inner" style="width: 600px"> 
+          <div class="inner" style="width: 550px"> 
           <h1 id="cityName">Anywhere, USA</h1>
            <today> <div class= "city-results" id ="current-date-time"> </div> </today>            
-          </br>
-           <span id="current_row"><span class= "city-results" id ="nowTemp"> 54 F° </span id="current_row">
-          <span> <img class= "icon" id ="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width=100px> </span>
+          
+          <div class="container" id="conditions"> 
+             <div class="col-6">
+               <div class="current-conditions">
+           <span class ="nowTemp"> 
+            54 F° 
+          </span>
+          <span> 
+            <img class= "icon" id ="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width=100px> 
+          </span>
+          </div>
+            </div>
+              </div>
+
+
            <ul class="details" id="details">
              <li id="feels">Feels Like: </li>
             <li id="description">Condition:</li>  
@@ -63,8 +75,6 @@
       <span class="low-temps"> 49° </span> 
     </div>
 </div>
-
-
         </div>
       </div>
     </div>
