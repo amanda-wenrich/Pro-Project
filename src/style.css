@@ -31,6 +31,10 @@ today {
 #nowTemp {
   font-size: 36px;
 }
+#current_row {
+  text-align: center;
+  margin: auto;
+}
 #details {
   text-transform: capitalize;
   list-style: none;
