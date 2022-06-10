@@ -29,6 +29,7 @@ h1 {
 }
 #current-conditions {
   text-align: center;
+  float-left: 50px;
 }
 
 #nowTemp {
