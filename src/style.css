@@ -28,16 +28,7 @@ today {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
-temp {
-  display: inline;
-  position: relative;
-  left: 180px;
-  font-size: 50px;
-}
-#icon {
-  position: relative;
-  right: 90px;
-}
+
 #details {
   text-transform: capitalize;
   list-style: none;
