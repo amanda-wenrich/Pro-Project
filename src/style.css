@@ -41,6 +41,7 @@ h1 {
   color: #3a4750;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
+  float: left;
 }
 #forecast-date {
   text-align: center;
