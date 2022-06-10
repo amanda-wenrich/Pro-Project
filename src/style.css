@@ -28,7 +28,9 @@ today {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
-
+#nowTemp {
+  font-size: 36px;
+}
 #details {
   text-transform: capitalize;
   list-style: none;
