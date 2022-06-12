@@ -90,19 +90,11 @@ h1 {
   padding-right: 10px;
   cursor: pointer;
 }
-#search-city-button:hover,
-#current-location-button:hover {
+#search-city-button:hover {
   color: white;
 }
-#current-location-button {
-  background-color: transparent;
-  border-color: transparent;
-  font-size: 25px;
-  color: #134472;
-  padding-left: 10px;
-  cursor: pointer;
-}
+
 #forecast {
   position: relative;
-  right: 15px;
+  right: 10px;
 }
