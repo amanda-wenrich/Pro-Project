@@ -1,5 +1,5 @@
 let now = new Date();
-let today = document.querySelector("today");
+let today = document.querySelector("#current-date-time");
 
 let date = now.getDate();
 let year = now.getFullYear();
