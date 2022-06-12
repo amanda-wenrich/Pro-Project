@@ -95,6 +95,5 @@ h1 {
 }
 
 #forecast {
-  position: relative;
-  right: 0px;
+  text-align: center;
 }
